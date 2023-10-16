@@ -33,12 +33,12 @@ sensor = weatherhat.WeatherHAT()
 
 # Create csv file for data collection
 
-output_dir = Path("/home/pi/")
+output_dir = Path(os.path.abspath(__file__))
 output_dir.mkdir(parents=True, exist_ok=True)
 
 file_path = output_dir / 'weatherdata.csv'
 file_path = file_path.as_posix()
-print(file_path)
+print(f"Log will be saved to \n {file_path}")
 
 ## Definitions
 # Adjust this value based on your needs

@@ -93,7 +93,7 @@ chmod 755 /home/$USER/PiLogger/launcher.sh
 ```
 Type in:
 ```bash
-sudo crontab -e
+crontab -e
 ```
 This will bring up a crontab window.
 Now, enter the line:

@@ -7,14 +7,46 @@ Credit:https://learn.pimoroni.com/article/getting-started-with-weather-hat
 
 ### RaspberryPi OS and SSH access over Wi-Fi
 
-1) Create a Raspberry Pi Image on your external SD card with **Raspberry Pi Imager** (https://www.raspberrypi.com/software/) <br>
-Follow https://learn.pimoroni.com/article/getting-started-with-weather-hat up to section **INSTALLING RASPBERRY PI OS (WITH REMOTE ACCESS)**
-<br>
-*Note: Make sure to install Python >=3.6
+Create a Raspberry Pi Image on your external SD card with **Raspberry Pi Imager** (https://www.raspberrypi.com/software/) <br>
 
+* Select RASPBERRY PI OS(32-BIT)
+<br>**In the setting panel:** 
+* Enable SSH
+* Set usrname and password
+* Configure wifi: <br>SSID: eduroam<br>password: "your password" 
+
+Click Write to flash the sd card. When finished pop it in the PiLogger.
+
+### Setup Eduroam for internet acess
+Connect a monitor to your PiLogger and plug in power source.
+* Connect to Bristol-WiFi-Setup
+* Open browser and Follow https://www.wireless.bris.ac.uk/eduroam/instructions/go-ubuntu/
+
+After following the instruction you should have access to the internet from your Pilogger.
+
+### Connect to Eduroam on boot automatically
+To tell the Raspberry Pi to automatically connect to your WiFi network you need to edit a file called: wpa_supplicant.conf.
+
+To open the file in nano type the following command:
+```bash
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+Scroll to the end of the file and add the following to the file to configure your network:
+```bash
+network={
+   ssid="eduroam"
+   psk="SecretPassWord"
+}
+```
+_Remember to replace this with your own network name and password._
+Save and close the file by pressing Ctrl+X followed by Y. At this point the Raspberry Pi should automatically connect to your network.
    
 ### Connect to RaspberryPi and install software
-Once connected via ssh with Putty for example.
+With any pc connected to eduroam ou can now connect to the PiLogger via ssh with Putty for example with the login details you setup in the first step.<br>
+or you may just continue the installation on the PiLogger GUI with a monitor. 
+_*Note: SSH may not be possible over eduroam_
+
 
 1) Run to enable the Raspberry Pi I2C and SPI interfaces.
 ```bash

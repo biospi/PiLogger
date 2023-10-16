@@ -12,6 +12,7 @@ Follow https://learn.pimoroni.com/article/getting-started-with-weather-hat up to
 <br>
 *Note: Make sure to install Python >=3.6
 
+   
 ### Connect to RaspberryPi and install software
 Once connected via ssh with Putty for example.
 
@@ -21,15 +22,15 @@ sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_spi 0
 ```
 
-2) Run
+2) Run to install dev libraries
 ```bash
 sudo apt-get install libatlas-base-dev
 ```
 
 3) Clone the repository.
 ```bash
-git clone https://github.com/biospi/WeatherPi.git
-cd WeatherPi
+git clone https://github.com/biospi/PiLogger.git
+cd PiLogger
 ./install.sh --unstable
 ```
 
@@ -50,3 +51,5 @@ make environment
 ```bash
 python examples/basic.py
 ```
+
+### Setup Pi internet access with eduroam

@@ -96,11 +96,16 @@ Type in:
 crontab -e
 ```
 This will bring up a crontab window.
-Now, enter the line:
+Select editor and add at the bottom:
 ```bash
 @reboot sh /home/$USER/PiLogger/launcher.sh >/home/$USER/PiLogger 2>&1
 ```
 What this does is rather than executing the launcher script at a specific time, it will execute it once upon startup.
+
+Type in to check that the cron job is active:
+```bash
+crontab -l
+```
 
 try it with:
 ```bash

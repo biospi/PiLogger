@@ -98,7 +98,7 @@ crontab -e
 This will bring up a crontab window.
 Select editor and add at the bottom:
 ```bash
-@reboot /home/$USER/PiLogger/launcher.sh
+@reboot sleep 30; /home/$USER/PiLogger/launcher.sh >> /home/$USER/PiLogger/cronlog.txt 2>&1
 ```
 Will execute main.py script on boot.
 Type in to check that the cron job is active:

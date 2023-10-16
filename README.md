@@ -100,8 +100,7 @@ Select editor and add at the bottom:
 ```bash
 @reboot /home/$USER/PiLogger/launcher.sh
 ```
-What this does is rather than executing the launcher script at a specific time, it will execute it once upon startup.
-
+Will execute main.py script on boot.
 Type in to check that the cron job is active:
 ```bash
 crontab -l

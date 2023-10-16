@@ -106,7 +106,7 @@ GPIO.setup(BUTTONS, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 def start_weather_app():
     print("Starting weather app...")
     # Code to execute when button B is pressed
-    process = subprocess.Popen(["python3", "/home/pi/weatherhat-python/examples/weather.py"])
+    process = subprocess.Popen(["python3", f"{output_dir.as_posix()}/weather.py"])
     # Wait for 10 seconds
     time.sleep(5)
     # Terminate the process after 30 seconds

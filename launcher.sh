@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /home/$USER/PiLogger
+cd /home/fo18103/PiLogger
 source venv/bin/activate
-python /home/$USER/PiLogger/main.py
+python /home/fo18103/PiLogger/main.py

@@ -1,3 +1,3 @@
 #!/bin/sh
-# launcher.sh
-sudo python /home/$USER/PiLogger/main.py
+source venv/bin/activate
+python /home/$USER/PiLogger/main.py

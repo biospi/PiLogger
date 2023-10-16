@@ -100,7 +100,7 @@ Select editor and add at the bottom:
 <br>
 **Replace fo18103 with the username you set up in step 1 (RaspberryPi OS and SSH access over Wi-Fi)** 
 ```bash
-@reboot sleep 30; /home/fo18103/PiLogger/launcher.sh >> /home/fo18103/PiLogger/cronlog.txt 2>&1
+@reboot sleep 10; /home/fo18103/PiLogger/launcher.sh >> /home/fo18103/PiLogger/cronlog.txt 2>&1
 ```
 Will execute main.py script on boot.
 Type in to check that the cron job is active:

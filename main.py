@@ -27,6 +27,7 @@ collecting_data = False
 power_saving = None
 weather_app = False
 weather_app_p = None
+PERIOD = 60.0
 
 # Create a WeatherHat instance
 sensor = weatherhat.WeatherHAT()
@@ -127,8 +128,7 @@ def collect_data():
 
     # Data collection loop
     sensor.temperature_offset = OFFSET
-    sensor.update(
-        interval=60.0)  # This can be adjusted (in seconds) to meet your needs. Note: you must also adjust the time.sleep on line 51
+    sensor.update(interval=PERIOD)  # This can be adjusted (in seconds) to meet your needs. Note: you must also adjust the time.sleep on line 51
     timestamp = datetime.now()
 
     with open(file_path, mode="a", newline="") as csv_file:
@@ -217,5 +217,5 @@ while True:
     if not power_saving:
         disp.set_backlight(12)
 
-    time.sleep(2.0)
+    time.sleep(PERIOD)
 

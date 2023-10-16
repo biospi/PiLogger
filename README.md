@@ -44,8 +44,8 @@ Save and close the file by pressing Ctrl+X followed by Y. At this point the Rasp
    
 ### Connect to RaspberryPi and install software
 With any pc connected to eduroam ou can now connect to the PiLogger via ssh with Putty for example with the login details you setup in the first step.<br>
-or you may just continue the installation on the PiLogger GUI with a monitor. 
-_*Note: SSH may not be possible over eduroam_
+or you can also just continue the installation on the PiLogger GUI with a monitor by opening a new terminal window. 
+<br>_*Note: SSH may not be possible over eduroam_
 
 
 1) Run to enable the Raspberry Pi I2C and SPI interfaces.
@@ -63,7 +63,8 @@ sudo apt-get install libatlas-base-dev
 ```bash
 git clone https://github.com/biospi/PiLogger.git
 cd PiLogger
-./install.sh --unstable
+chmod +x install.sh
+sudo ./install.sh --unstable
 ```
 
 4) Create python virtual environment 

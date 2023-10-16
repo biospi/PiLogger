@@ -85,4 +85,24 @@ make environment
 python examples/basic.py
 ```
 
-### Setup Pi internet access with eduroam
+### Setup Launcher to start app on boot
+
+Give the launcher script permissions with:
+```bash
+chmod 755 /home/$USER/PiLogger/launcher.sh
+```
+Type in:
+```bash
+sudo crontab -e
+```
+This will bring up a crontab window.
+Now, enter the line:
+```bash
+@reboot sh /home/$USER/PiLogger/launcher.sh >/home/$USER/PiLogger 2>&1
+```
+What this does is rather than executing the launcher script at a specific time, it will execute it once upon startup.
+
+try it with:
+```bash
+sudo reboot
+```

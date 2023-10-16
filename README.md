@@ -89,7 +89,7 @@ python examples/basic.py
 
 Give the launcher script permissions with:
 ```bash
-chmod 755 /home/$USER/PiLogger/launcher.sh
+chmod +x /home/$USER/PiLogger/launcher.sh
 ```
 Type in:
 ```bash
@@ -98,7 +98,7 @@ crontab -e
 This will bring up a crontab window.
 Select editor and add at the bottom:
 ```bash
-@reboot sh /home/$USER/PiLogger/launcher.sh >/home/$USER/PiLogger 2>&1
+@reboot /home/$USER/PiLogger/launcher.sh
 ```
 What this does is rather than executing the launcher script at a specific time, it will execute it once upon startup.
 
@@ -111,3 +111,7 @@ try it with:
 ```bash
 sudo reboot
 ```
+
+### TODO
+* Deep sleep mode in between record
+* Data download via SSH or other

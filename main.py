@@ -33,7 +33,7 @@ sensor = weatherhat.WeatherHAT()
 
 # Create csv file for data collection
 
-output_dir = Path(os.path.abspath(__file__))
+output_dir = Path(os.path.abspath(__file__)).parent
 output_dir.mkdir(parents=True, exist_ok=True)
 
 file_path = output_dir / 'weatherdata.csv'

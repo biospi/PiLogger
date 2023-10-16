@@ -9,6 +9,7 @@ import sys
 import math
 import pathlib
 import weather
+from pathlib import Path
 
 # os.chdir("/home/pi/weatherhat-python/examples")
 
@@ -31,7 +32,14 @@ weather_app_p = None
 sensor = weatherhat.WeatherHAT()
 
 # Create csv file for data collection
-file_path = '/home/pi/weatherdata.csv'
+
+output_dir = Path("/home/pi/")
+output_dir.mkdir(parents=True, exist_ok=True)
+
+file_path = output_dir / 'weatherdata.csv'
+file_path = file_path.as_posix()
+print(file_path)
+
 ## Definitions
 # Adjust this value based on your needs
 # -17.5oC is an estimated error of having the HAT attached directly to the RPi that gets hot when turned on

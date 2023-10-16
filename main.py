@@ -179,7 +179,8 @@ while True:
     if collecting_data:
         message = "Data collection started! \nA: Record data. \nY: Energy saving mode"
         # Redraw the screen with the new message
-        size_x, size_y = draw.textbbox(message, font)
+        #size_x, size_y = draw.textbbox(message, font)
+        size_x, size_y = 200, 80
         x = (WIDTH - size_x) / 2
         y = (HEIGHT / 2) - (size_y / 2)
         draw.rectangle((0, 0, WIDTH, HEIGHT), back_colour)
@@ -189,7 +190,8 @@ while True:
 
     if not collecting_data:
         message = "A: Record data. \nTurn off to stop. \nB: Display data (30 secs). \nY: Energy saving mode."
-        size_x, size_y = draw.textbbox(message, font)
+        #size_x, size_y = draw.textbbox(message, font)
+        size_x, size_y = 200, 80
         # Calculate text position
         x = (WIDTH - size_x) / 2
         y = (HEIGHT / 2) - (size_y / 2)

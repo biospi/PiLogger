@@ -115,4 +115,13 @@ sudo reboot
 
 ### TODO
 * Deep sleep mode in between record
-* Data download via SSH or other
+* Data download via SSH or other(manually, email. onedrive, cloud upload....)
+
+Note that there are no real deep sleep mode on the Raspberry Pi 4
+<br>
+One option when running on battery is to use a timer one off switch on the power supply.
+
+https://raspberrypi.stackexchange.com/questions/23720/how-can-i-put-raspberrypi-to-shut-down-and-wake-up-later
+https://www.youtube.com/watch?v=05o5QOZkpwg
+
+Other options such as RPi Pico or ESP32 microcontroller have much better battery life because they natively implement power saving modes
